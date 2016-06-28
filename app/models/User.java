@@ -18,6 +18,9 @@ public class User extends Model {
 	public String email;
 	public String password;
 	
+	@OneToMany(cascade=CascadeType.ALL)
+	  public List<Post> posts;
+	
 	public User(String firstName, String lastName, String email, String password) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -33,4 +36,9 @@ public class User extends Model {
 	public boolean checkPassword(String password) {
 		return this.password.equals(password);
 	}
+	
+	 public void addPost (Post post)
+	  {
+	    posts.add(post);
+	  }
 }
