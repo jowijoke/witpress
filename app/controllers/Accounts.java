@@ -18,7 +18,7 @@ public class Accounts extends Controller {
 	public static void logout() {
 		session.clear();
 		Logger.info("user out");
-		Accounts.index();
+		Welcome.index();
 	}
 
 	public static void index() {
@@ -53,7 +53,7 @@ public class Accounts extends Controller {
 		if ((user != null) && (user.checkPassword(password) == true)) {
 			Logger.info("Successful authentication of " + user.firstName);
 			session.put("logged_in_userid", user.id);
-			Accounts.index();
+			Welcome.index();
 		} else {
 			Logger.info("Authentication failed");
 			login();
