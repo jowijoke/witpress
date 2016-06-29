@@ -16,6 +16,15 @@ POST	/register								Accounts.register
 GET 	/blog									Blog.index
 POST	/blog/newpost							Blog.newPost
 
+# Public Blog page
+GET /publicblogdirectory						PublicBlogDirectory.index
+
+# About Page
+GET /about										About.index
+
+# Contact Page
+GET /contact									Contact.index	
+
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
